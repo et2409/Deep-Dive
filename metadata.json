@@ -1,0 +1,6 @@
+{
+  "name": "Deep Dive Australia — Bespoke Scuba Expeditions & Technical Diving",
+  "description": "Ultra-exclusive scuba expeditions, technical trimix diving, private superyacht charters, and elite PADI certifications across Australia's Great Barrier Reef, Coral Sea, and Ningaloo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

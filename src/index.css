@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --abyss-navy: #030C16;
+  --abyss-navy-light: #071524;
+  --deep-ocean: #0D2840;
+  --deep-ocean-dark: #0A1F33;
+  --teal-surf: #127D97;
+  --teal-surf-bright: #1696B5;
+  --sunlit-gold: #D4AF37;
+  --sunlit-gold-light: #E5C158;
+  --sea-foam: #E2EEF2;
+  --sea-foam-bright: #F0F7F9;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--abyss-navy);
+    color: var(--sea-foam);
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Luxury Gold Metallic Button & Sheen */
+.btn-gold-metallic {
+  background: linear-gradient(135deg, #D4AF37 0%, #F1D37A 48%, #C49B27 100%);
+  color: #030C16;
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold-metallic::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-gold-metallic:hover::after {
+  transform: translateX(340%) rotate(25deg);
+}
+
+.btn-gold-metallic:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px -8px rgba(212, 175, 55, 0.45);
+}
+
+/* Subtle gold hairline border */
+.gold-hairline {
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.gold-hairline-hover {
+  transition: border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-hairline-hover:hover {
+  border-color: rgba(212, 175, 55, 0.48);
+}
+
+/* Deep blue glassmorphic container */
+.glass-abyss {
+  background: rgba(10, 31, 51, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-header {
+  background: rgba(3, 12, 22, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030C16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0D2840;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #127D97;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
